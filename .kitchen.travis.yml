@@ -18,5 +18,5 @@ platforms:
 suites:
   - name            : alfred
     provisioner     :
-        playbook    : "test/application/alfred.yml"
+        playbook    : "test/application/alfred_travis.yml"
         extra_vars  : { 'kitchen_connection': 'smart' }
