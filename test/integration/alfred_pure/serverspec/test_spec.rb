@@ -17,3 +17,7 @@ describe file('/usr/local/sbin/batadv-vis') do
   it { should_not exist }
   it { should_not be_executable }
 end
+
+describe package('libgps-dev') do
+  it { should_not be_installed }
+end
