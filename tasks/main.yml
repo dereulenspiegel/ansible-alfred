@@ -18,7 +18,15 @@
   when: alfred_libcap_dev_broken
   patch: basedir=/usr/src/alfred-{{alfred_version}} src=/usr/src/alfred-{{alfred_version}}/libcap.patch remote_src=True strip=0
 
+- set_fact:
+    alfred_config_gps: "CONFIG_ALFRED_GPSD=n"
+  when: not alfred_gps
+
+- set_fact:
+    alfred_config_vis: "CONFIG_ALFRED_VIS=n"
+  when: not alfred_vis
+
 - name: Compile and install alfred
-  shell: make && make install
+  shell: "make {{alfred_config_gps|default('')}} {{alfred_config_vis|default('')}} && make {{alfred_config_gps|default('')}} {{alfred_config_vis|default('')}} install"
   args:
     chdir: /usr/src/alfred-{{alfred_version}}
