@@ -11,7 +11,15 @@ Ansible of course
 Role Variables
 --------------
 
-None
+### Default Variables
+
+Name | Default | Description
+---- | ------- | -----------
+alfred_version | 2015.0 | The version of alfred to install
+alfred_source_url | http://downloads.open-mesh.org/batman/stable/sources/alfred/alfred-{{alfred_version}}.tar.gz | The URL to download alfred from
+alfred_gps | true | Wether to build alfred-gpsd
+alfred_vis | true | Wether to build batadv-vis
+
 
 Dependencies
 ------------
@@ -25,7 +33,7 @@ Simply depend on this role
 
     - hosts: servers
       roles:
-         - { role: dereulenspiegel.alfred }
+         - { role: dereulenspiegel.alfred, alfred_gps: false }
 
 License
 -------
@@ -35,4 +43,4 @@ MIT
 Author Information
 ------------------
 
-Till Klocke
+Till Klocke [dereulenspiegel](https://twitter.com/dereulenspiegel) on Twitter
