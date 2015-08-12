@@ -20,3 +20,7 @@ suites:
     provisioner     :
         playbook    : "test/application/alfred_travis.yml"
         extra_vars  : { 'kitchen_connection': 'smart' }
+  - name: alfred_pure
+    provisioner:
+      playbook: "test/application/alfred_pure.yml"
+      extra_vars: {'kitchen_connection': 'smart'}
