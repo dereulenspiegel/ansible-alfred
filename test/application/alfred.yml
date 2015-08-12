@@ -1,0 +1,9 @@
+---
+- name         : Install and configure alfred
+  hosts        : all
+  gather_facts : yes
+  connection   : "{{ kitchen_connection | default('local') }}"
+  vars_files   :
+                 - "alfred_pkg_vars.yml"
+  roles        :
+                 - "ansible-alfred"
