@@ -22,3 +22,8 @@ describe file('/etc/init.d/alfred') do
   it { should exist }
   it { should be_executable }
 end
+
+describe file('/etc/init.d/batadv-vis') do
+  it { should exist }
+  it { should be_executable }
+end

@@ -6,4 +6,5 @@ alfred_gps: true
 alfred_vis: true
 alfred_batman_interface: bat0
 alfred_interface: bat0
+alfred_batadv_vis_interface: bat0
 alfred_master_mode: false
