@@ -18,6 +18,7 @@ describe file('/usr/local/sbin/batadv-vis') do
   it { should be_executable }
 end
 
-describe process('alfred') do
-  it { should be_running }
+describe file('/etc/init.d/alfred') do
+  it { should exist }
+  it { should be_executable }
 end
